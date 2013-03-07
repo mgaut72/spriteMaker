@@ -1,32 +1,13 @@
 """
-
     INPUT:
-
-        1)  no command line arguments.  This assumes that all
-            images in a folder called 'img'  should
-            be the same size.
-
-            All images will be scaled down to the size of the
-            smallest image in the folder, and combined into a
-            spritesheet.
-
-        2)  1... arguments.
-
-            This assumes that the directories, whose names are
-            passed as arguments, contain images of different
-            size.  For each directory passed as an argument,
-            scale all the images down to the size of the smallest
-            image in that folder, then add that set to the
-            spritesheet.
-
-            proceed with the next folder, adding the sprites to a
-            "new line" in the spritesheet
+        no command line arguments.  This assumes that all
+        images in a folder called 'img'  should
+        be the same size.
 
     OUTPUT:
 
         a spritesheet, as well as a txt file containing all the
         size/location data for eacch sprite
-
 """
 
 from PIL import Image
