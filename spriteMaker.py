@@ -43,7 +43,7 @@ fd = open('sprite_definitions.txt', 'w')
 # add each sprite to the total sheet
 for img in imageList:
 
-    fd.write(sprt + "\nUpper Left X: 0\nUpper Left Y: " + str(y_loc)
+    fd.write("Upper Left X: 0\nUpper Left Y: " + str(y_loc)
             + "\nWidth: " + str(img.size[0]) + "\nHeight: "
             + str(img.size[1]) + "\n\n")
 
