@@ -37,11 +37,49 @@ import os
 max_width = 0
 total_height = 0
 
+# loop through all the images in the folder to determine the dimensions
+# of our spritesheet
 for sprt in os.listdir("./img/"):
     img = Image.open("./img/" + sprt)
-    print ("opened the img" + sprt)
-    #if (max_width < img.size[0]):
-    #    max_width
+
+    if (max_width < img.size[0]):
+        max_width = img.size[0]
+
+    total_height += img.size[1]
+
+
+
+sheet = Image.new("RGBA", (max_width, total_height))
+
+
+y_loc = 0
+
+
+fd = open('sprite_definitions.txt', 'w')
+
+
+# add each sprite to the total sheet
+for sprt in os.listdir("./img/"):
+    img = Image.open("./img/" + sprt)
+
+    fd.write(sprt + "\nUpper Left X: 0\nUpper Left Y: " + str(y_loc)
+            + "\nWidth: " + str(img.size[0]) + "\nHeight: "
+            + str(img.size[1]) + "\n\n")
+
+    sheet.paste(img,(0,y_loc))
+    y_loc += img.size[1]
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
